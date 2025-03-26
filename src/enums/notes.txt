@@ -1,0 +1,1 @@
+En esta carpeta se usan las enumeraciones de mongoose o enumeraciones propias usando TypeScript 

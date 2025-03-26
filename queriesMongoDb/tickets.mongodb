@@ -1,0 +1,495 @@
+use('sistema-tickets') //PRODUCCIÓN DB LOCAL
+
+//db.tickets.find({}).sort({createdAt: -1})
+
+// db.tickets.insertMany([
+//   {
+//     title: 'Ticket N1',
+//     category: 'soporte',
+//     subcategory: 'software',
+//     priority: 'alta',
+//     evidence: 'CAPTURA_PANTALLA',
+//     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N2',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N3',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N4',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N5',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N6',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N7',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N8',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N9',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N10',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N11',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N12',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N13',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N14',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N15',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N16',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N17',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N18',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N19',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N20',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N21',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N22',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N23',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N24',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N25',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N26',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N27',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N28',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N29',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N30',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N31',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N32',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N33',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N34',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N35',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N36',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N37',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N38',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N39',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N40',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N41',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N42',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N43',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N44',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N45',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N46',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N47',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N48',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N49',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N50',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N51',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N52',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N53',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N54',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N55',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N56',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N57',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N58',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'media',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N59',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'alta',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   },
+//   {
+//     'title': 'Ticket N60',
+//     'category': 'soporte',
+//     'subcategory': 'software',
+//     'priority': 'baja',
+//     'evidence': 'CAPTURA_PANTALLA',
+//     'description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+//   }
+// ])
+
+
+
+/* db.tickets.updateMany({},{$set: { createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()}}) */ //! Actualizar todos los documentos
+//db.tickets.find({})
+
+/* let ticketNoDelete = ['670c4ce0472976b9e97a0bde'];
+let objectIdsToExclude = ticketNoDelete.map( id  => ObjectId(id))
+db.tickets.deleteMany({_id: { $nin: objectIdsToExclude} } ) */ //!Eliminar todos los documentos de una collecion excepto algunos...
