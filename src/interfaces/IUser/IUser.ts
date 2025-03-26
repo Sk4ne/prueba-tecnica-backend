@@ -1,10 +1,17 @@
-import { ObjectId } from 'mongoose';
+import { Types } from 'mongoose';
 import { validRole } from '../../enums/enumsUserRole';
 
-
+export interface IDataToken {
+  _id: Types.ObjectId | string;
+  name: string;
+  email: string;
+  role: string;
+  iat: number;
+  exp: number;
+}
 
 export interface IUser {
-  _id: ObjectId | string; 
+  _id: Types.ObjectId | string; 
   name: string;
   lastName?: string;
   ID?: string;
