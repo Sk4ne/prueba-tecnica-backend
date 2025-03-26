@@ -31,7 +31,6 @@ export const getUsers = async (req:Request, res:Response, next:NextFunction) => 
   try {
     const users:IUser[] = await User.find({})
       .sort({createdAt: -1})
-    // ContarDocumentos
     const totalUsers:number = await User.find({}).countDocuments();
     res.status(200).json({
       totalUsers,
@@ -41,6 +40,5 @@ export const getUsers = async (req:Request, res:Response, next:NextFunction) => 
     res.status(500).send({
       msg: `An error ocurred ${err}`
     })
-    // next(err);
   }
 }
