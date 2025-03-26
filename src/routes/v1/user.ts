@@ -6,12 +6,15 @@ import { IDUnique } from "../../helpers/uniqueFields/IdUnique";
 import { cellPhoneUnique } from "../../helpers/uniqueFields/cellPhoneUnique";
 import { existEmail } from "../../helpers/uniqueFields/existsEmailUser";
 import { validPass } from "../../helpers/regexPass";
+import { login } from "../../controllers/loginController";
+import { validateJwt } from "../../middlewares/validateJwt";
+import { validateRole } from "../../middlewares/validateRoles";
 
 const router:Router = Router();
 
-//! PENDIENTE - OCULTA LA CONTRASEÑA DEL MODELO DE DATOS - LUNES 14 OCTUBRE 2024
-router.get('/users',getUsers)
+router.get('/users',[validateJwt],validateRole(['administrador','cliente']),getUsers)
 router.post('/auth/register', [
+  validateJwt,validateRole(['administrador','cliente']),
   check('name')
     .notEmpty()
     .withMessage('El nombre del usuario es requerido'),
@@ -35,6 +38,7 @@ router.post('/auth/register', [
     .withMessage('El rol es requerido!!'),
   validateFields
 ],addUser)
+router.post('/auth/login',login);
 
 
 export default router; 
