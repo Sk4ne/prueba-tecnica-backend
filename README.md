@@ -6,6 +6,7 @@
 - Nodejs
 - Typescript
 - Mongoose
+- MongoDb
 - Expressjs
 - Postman - Para testear la api
 
@@ -22,6 +23,8 @@ Luego de descargar el proyecto
  npm run dev
 
  ```
+
+- La base de datos se puede usar de forma local o en la nube usando mongoATLAS
 
  Documentación de la api en postman
  ```
