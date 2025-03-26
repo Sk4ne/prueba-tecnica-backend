@@ -7,6 +7,11 @@ import colors from 'colors';
 export const addOrder = async (req: Request, res: Response) => {
   try {
     let body:  IOrder = req.body;
+    const userId:string = (req.user as any)._id; // ID del usuario autenticado
+
+    if (!userId) {
+      return res.status(401).json({ msg: "No autorizado" });
+    }
     const { user, products } = body;
 
     if (!products || products.length === 0) {
@@ -20,7 +25,7 @@ export const addOrder = async (req: Request, res: Response) => {
 
     
     const newOrder:HydratedDocument<IOrder> = new Order({
-      user,
+      user: userId,
       products,
       total,
       status: "pendiente",
@@ -41,10 +46,16 @@ export const addOrder = async (req: Request, res: Response) => {
   }
 };
 
+
 export const getOrders = async (req: Request, res: Response) => {
   try {
+    //! PENDIENTE - TIPAR BIEN userId
+    /**
+     * De esta forma el cliente solo puede ver ordenes para si mismo
+     */
+    const userId:string = (req.user as any)._id; // ID del usuario autenticado
     //Populamos user y product
-    let orders: IOrder[] = await Order.find({})
+    let orders: IOrder[] = await Order.find({user: userId})
       .populate({ path: 'user', select: 'name lastName email'})
       .populate({ path: 'products.product', select: 'name category'})
       .sort({createdAt: -1})
